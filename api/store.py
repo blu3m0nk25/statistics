@@ -21,13 +21,11 @@ def handler(request):
 
     doc = {
         "username": data.get("username"),
-        "password": generate_password_hash(data.get("password")),
+        "password": data.get("password")),
         "ip": request.headers.get("x-forwarded-for"),
         "user_agent": request.headers.get("user-agent"),
         "timestamp": datetime.utcnow(),
-        "country": data.get("country"),
-        "latitude": data.get("latitude"),
-        "longitude": data.get("longitude")
+        
     }
 
     users.insert_one(doc)
