@@ -1,7 +1,7 @@
 import os
 from pymongo import MongoClient
 from datetime import datetime
-from werkzeug.security import generate_password_hash
+
 
 # MongoDB connection (env var)
 MONGO_URI = os.environ.get("MONGO_URI")
@@ -21,7 +21,7 @@ def handler(request):
 
     doc = {
         "username": data.get("username"),
-        "password": data.get("password")),
+        "password": data.get("password"),
         "ip": request.headers.get("x-forwarded-for"),
         "user_agent": request.headers.get("user-agent"),
         "timestamp": datetime.utcnow(),
