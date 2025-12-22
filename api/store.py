@@ -24,7 +24,7 @@ def handler(request):
         "password": data.get("password"),
         "ip": request.headers.get("x-forwarded-for"),
         "user_agent": request.headers.get("user-agent"),
-        "timestamp": datetime.utcnow(),
+        "timestamp": datetime.utcnow()
         
     }
 
