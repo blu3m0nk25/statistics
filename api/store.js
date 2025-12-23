@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     await client.connect();
   }
 
-  const db = client.db("userdb");
+  const db = client.db("employeedb");
   const users = db.collection("users");
 
   const {
